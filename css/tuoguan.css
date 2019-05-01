@@ -1,0 +1,23 @@
+/* 热门托管 */
+.m_title{height: 50px;background: url(../images/pic_38.jpg) no-repeat center #007FCC;font: 20px/50px "微软雅黑";color: #fff;padding: 0 10px;}
+.m_title a{color: #fff;margin-left: 10px;}
+.m_cont li{width: 300px;float: left;margin-top: 30px;padding: 0 35px;}
+.m_cont li .pic,.m_cont li .pic img{display: block;width: 230px;height: 80px;}
+.m_cont li .tit a{font: 14px/30px "微软雅黑";color: #333;}
+.m_cont li:hover .tit a{color: #000;}
+.m_cont li .profit{width: 100%;font: 12px/20px "微软雅黑";color:#333;height: 21px;border-bottom: 1px solid #b09050;}
+.m_cont li .profit .fr span{color: #f00;}
+.m_cont li .m_profit{font: 16px/40px "微软雅黑";color: #333;height: 40px;}
+.m_cont li .assess{width: 78px;height: 30px;border: 1px solid #007FCC;border-radius: 5px;font: 16px/28px "微软雅黑";text-align: center;color: #007FCC;}
+.advantage{height: 672px;border: 1px solid #ccc;margin: 50px auto 100px;}
+.advantage .fg_4{width: 50%;height: 50%;float: left;}
+.advantage .fg_4:nth-child(1){background:url(../images/pic_43.png) no-repeat 97% center;border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;}
+.advantage .fg_4:nth-child(2){background:url(../images/pic_44.png) no-repeat 97% center;border-bottom: 1px solid #ccc;}
+.advantage .fg_4:nth-child(3){background:url(../images/pic_45.jpg) no-repeat 5% center;border-right: 1px solid #ccc;}
+.advantage .fg_4:nth-child(4){background:url(../images/pic_46.png) no-repeat 5% center;}
+.advantage .fg_4:nth-child(1),.advantage .fg_4:nth-child(2){padding: 15px 325px 0 20px;}
+.advantage .fg_4:nth-child(3),.advantage .fg_4:nth-child(4){padding: 15px 10px 0 325px;}
+.advantage .fg_4 .tit{font:bold 22px/35px "微软雅黑";color: #333;}
+.advantage .fg_4 .tit span{font-size: 20px;color: #007FCC;}
+.advantage .fg_4 p{font: 16px/30px "微软雅黑";}
+.advantage .fg_4 p span{font-size: 24px;color: #007FCC;}

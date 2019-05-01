@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>米撸租车</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script type="text/javascript" src="js/jquery172.js"></script>
+	<script type="text/javascript" src="js/banner.js"></script>
+	<script type="text/javascript" src="js/option.js"></script>
+</head>
+<body>
+	<!--通用头部-->
+	<div class="header">
+		<div class="top_bg">
+			<div class="wrap">
+				<div class="top_L fl"><p class="fl">欢迎访问米撸租车官方网站</p><i class="fl"></i><p class="fl">24小时预定热线：<span>400-8888-9999</span></p></div>
+				<div class="top_R fr"><a href="#">简体中文</a><i></i><a href="#">繁体中文</a></div>
+			</div>
+		</div>
+		<div class="head">
+			<div class="wrap">
+				<a href="#" class="logo fl"><img src="images/logo.png"/></a>
+				<div class="nav fr">
+					<ul>
+						<li><a href="#">网站首页</a></li>
+						<li><a href="#">租车服务</a></li>
+						<li><a href="#">托管服务</a></li>
+						<li><a href="#">婚车租赁</a></li>
+						<li><a href="#">米撸资讯</a></li>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--banner-->
+	<div class="banner">
+		<ul class="bxslider">
+			<li class="bannerli" style="background:url(images/banner1.jpg) no-repeat center top; background-size:auto 100%;"><a href="#"></a></li>
+			<li class="bannerli" style="background:url(images/banner2.jpg) no-repeat center top; background-size:auto 100%;"><a href="#"></a></li>
+			<li class="bannerli" style="background:url(images/banner3.jpg) no-repeat center top; background-size:auto 100%;"><a href="#"></a></li>
+			<li class="bannerli" style="background:url(images/banner4.jpg) no-repeat center top; background-size:auto 100%;"><a href="#"></a></li>
+		</ul>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var slider = $('.bxslider').bxSlider({
+					mode: 'horizontal',
+					captions: true,
+					auto: true,
+					speed: 500,
+					controls: true,
+					pause: 5000,
+					onSliderLoad: function() {
+						$(".bx-pager-item a").click(function() {
+							var thumbIndex = $('.bx-pager-item a').index(this);
+							slider.goToSlide(thumbIndex);
+							slider.startAuto();
+							$('.bx-pager-item a').removeClass('active');
+							$(this).addClass('active');
+							return false;
+						});
+						$(".bx-wrapper a.bx-next,.bx-wrapper a.bx-prev").click(function() {
+							var thumbIndex = $('.bx-pager-item a.active').parent().index();
+							slider.goToSlide(thumbIndex);
+							slider.startAuto();
+							$('.bx-pager-item a').removeClass('active');
+							$('.bx-pager-item').eq(thumbIndex).find('a').addClass('active');
+							return false;
+						});
+					}
+				});
+			})
+		
+			/*获取自适应高度*/
+			if((document.body) && (document.documentElement.clientHeight))
+				winHeight = document.documentElement.clientHeight;
+		
+			/*获取自适应宽度*/
+			if((document.body) && (document.body.clientWidth))
+				winWidth = document.body.clientWidth;
+		
+			$(".bannerli").css({
+				"width": (winWidth - 0) + "px"
+			});
+		
+			if((document.body) && (document.body.clientWidth < 1200))
+				$(".bannerli").css({
+					"width": (100) + "%"
+				});
+		</script>
+		<div class="abs">
+			<div class="wrap">
+				<div class="class">
+					<dl>
+						<dt>按品牌</dt>
+						<dd>
+							<ul class="ul1">
+								<li><a href="#"><img src="images/icon_1.png" align="absmiddle"/>劳斯莱斯</a></li>
+								<li><a href="#"><img src="images/icon_2.png" align="absmiddle"/>兰博基尼</a></li>
+								<li><a href="#"><img src="images/icon_3.png" align="absmiddle"/>法拉利</a></li>
+								<li><a href="#"><img src="images/icon_4.png" align="absmiddle"/>阿拉顿马丁</a></li>
+								<li><a href="#"><img src="images/icon_5.png" align="absmiddle"/>宾利</a></li>
+								<li><a href="#"><img src="images/icon_6.png" align="absmiddle"/>保时捷</a></li>
+								<div class="clear"></div>
+							</ul>
+						</dd>
+						<div class="clear"></div>
+						<dt>按类型</dt>
+						<dd>
+							<ul class="ul2">
+								<li><a href="#">小型汽车</a></li>
+								<li><a href="#">中型越野</a></li>
+								<li><a href="#">大型越野</a></li>
+								<li><a href="#">商务车</a></li>
+								<li><a href="#">小型客车</a></li>
+								<li><a href="#">运输车</a></li>
+								<div class="clear"></div>
+							</ul>
+						</dd>
+						<div class="clear"></div>
+						<dt>按价格</dt>
+						<dd>
+							<ul class="ul3">
+								<li><a href="#">1000-3000</a></li>
+								<li><a href="#">3000-5000</a></li>
+								<li><a href="#">5000-8000</a></li>
+								<li><a href="#">8000-10000</a></li>
+								<li><a href="#">10k-12k</a></li>
+								<li><a href="#">12k-15k</a></li>
+								<div class="clear"></div>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--服务类型-->
+	<div class="serveType wrap">
+		<ul>
+			<li><a href="#" style="background: url(images/icon_7.png) no-repeat center 25%;">自驾用车</a></li>
+			<li><a href="#" style="background: url(images/icon_8.png) no-repeat center 25%;">配驾用车</a></li>
+			<li><a href="#" style="background: url(images/icon_9.png) no-repeat center 25%;">机场接送</a></li>
+			<li><a href="#" style="background: url(images/icon_10.png) no-repeat center 25%;">婚庆用车</a></li>
+			<li><a href="#" style="background: url(images/icon_11.png) no-repeat center 25%;">影视用车</a></li>
+			<li><a href="#" style="background: url(images/icon_12.png) no-repeat center 25%;">游轮游艇</a></li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	<!--服务预约-->
+	<div class="serveBespeak wrap">
+		<div class="sB_L fl">
+			<span class="absSpan">特价接机</span>
+			<img src="images/pic_1.png"/>
+			<div class="info fr">
+				<p>品牌：宝马730</p>
+				<p>特价：<b>¥888元</b></p>
+				<p>原价：<del>¥1666元</del></p>
+				<a href="#">立即预约</a>
+			</div>
+		</div>
+		<div class="sB_R fr">
+			<div class="tab_opt">
+				<ul>
+					<li class="state">周租</li>
+					<li>月租</li>
+					<li>季租</li>
+					<li>年租</li>
+				</ul>
+			</div>
+			<div class="tab_cont">
+				<div class="cont">
+					<ul>
+						<li>
+							<a href="#" class="pic"><img src="images/pic_2.jpg"/></a>
+							<div class="info">
+								<p><a href="#">奥迪R8</a></p>
+								<p>套餐价&emsp;¥8888元</p>
+							</div>
+							<a href="#" class="btn fr">立即预约</a>
+						</li>
+						<li>
+							<span class="top">1</span>
+							<span class="tit"><a href="#">奥迪R8</a></span>
+							<span class="price">套餐价&emsp;<i>¥8888元</i></span>
+							<a href="#" class="more">详情&gt;&gt;</a>
+						</li>
+						<li>
+							<span class="top">2</span>
+							<span class="tit"><a href="#">奥迪R8</a></span>
+							<span class="price">套餐价&emsp;<i>¥8888元</i></span>
+							<a href="#" class="more">详情&gt;&gt;</a>
+						</li>
+						<li>
+							<span class="top">3</span>
+							<span class="tit"><a href="#">奥迪R8</a></span>
+							<span class="price">套餐价&emsp;<i>¥8888元</i></span>
+							<a href="#" class="more">详情&gt;&gt;</a>
+						</li>
+						<div class="clear"></div>
+					</ul>
+					<a href="#">查看更多</a>
+				</div>
+				<div class="cont" style="display:none;">222222</div>
+				<div class="cont" style="display:none;">333333</div>
+				<div class="cont" style="display:none;">444444</div>
+			</div>
+		</div>
+	</div>
+	<!--特价日租-->
+	<div class="tjrz wrap">
+		<span class="absSpan">特价日租</span>
+		<div class="rollBox">
+			<div class="LeftBotton rollBtn fl" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()"></div>
+			<div class="Cont" id="ISL_Cont">
+				<div class="ScrCont">
+					<div id="List1">
+						<!-- 图片列表 begin -->
+						<div class="item">
+							<a href="#" class="pic"><img src="images/pic_3.jpg"/></a>
+							<div class="info">
+								<p><a href="#" class="tit fl">奥迪 R8</a><del class="fr">¥ 9600元</del></p>
+								<hr />
+								<p class="fl">特价：<span>¥ 8000元</span></p>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#" class="pic"><img src="images/pic_4.jpg"/></a>
+							<div class="info">
+								<p><a href="#" class="tit fl">法拉利 430</a><del class="fr">¥ 9600元</del></p>
+								<hr />
+								<p class="fl">特价：<span>¥ 8000元</span></p>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#" class="pic"><img src="images/pic_5.jpg"/></a>
+							<div class="info">
+								<p><a href="#" class="tit fl">宝马X6 (3.0T)</a><del class="fr">¥ 4200元</del></p>
+								<hr />
+								<p class="fl">特价：<span>¥ 3500元</span></p>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#" class="pic"><img src="images/pic_6.jpg"/></a>
+							<div class="info">
+								<p><a href="#" class="tit fl">法拉利 599</a><del class="fr">¥ 10800元</del></p>
+								<hr />
+								<p class="fl">特价：<span>¥ 9000元</span></p>
+							</div>
+						</div>
+						<!-- 图片列表 end -->
+					</div>
+					<div id="List2"></div>
+				</div>
+			</div>
+			<div class="RightBotton rollBtn fl" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()"></div>
+		</div>
+		<script language="javascript" type="text/javascript">
+			<!--//--><![CDATA[//><!-- 
+			//图片滚动列表 mengjia 070816 
+			var Speed = 2; //速度(毫秒) 
+			var Space = 2; //每次移动(px) 
+			var PageWidth = 285; //翻页宽度 
+			var fill = 0; //整体移位 
+			var MoveLock = false;
+			var MoveTimeObj;
+			var Comp = 0;
+			var AutoPlayObj = null;
+			GetObj("List2").innerHTML = GetObj("List1").innerHTML;
+			GetObj('ISL_Cont').scrollLeft = fill;
+			GetObj("ISL_Cont").onmouseover = function() {
+				clearInterval(AutoPlayObj);
+			}
+			GetObj("ISL_Cont").onmouseout = function() {
+				AutoPlay();
+			}
+			AutoPlay();
+		
+			function GetObj(objName) {
+				if(document.getElementById) {
+					return eval('document.getElementById("' + objName + '")')
+				} else {
+					return eval('document.all.' + objName)
+				}
+			}
+		
+			function AutoPlay() { //自动滚动 
+				clearInterval(AutoPlayObj);
+				AutoPlayObj = setInterval('ISL_GoDown();ISL_StopDown();', 5000); //间隔时间 
+			}
+		
+			function ISL_GoUp() { //上翻开始 
+				if(MoveLock) return;
+				clearInterval(AutoPlayObj);
+				MoveLock = true;
+				MoveTimeObj = setInterval('ISL_ScrUp();', Speed);
+			}
+		
+			function ISL_StopUp() { //上翻停止 
+				clearInterval(MoveTimeObj);
+				if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0) {
+					Comp = fill - (GetObj('ISL_Cont').scrollLeft % PageWidth);
+					CompScr();
+				} else {
+					MoveLock = false;
+				}
+				AutoPlay();
+			}
+		
+			function ISL_ScrUp() { //上翻动作 
+				if(GetObj('ISL_Cont').scrollLeft <= 0) {
+					GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft + GetObj('List1').offsetWidth
+				}
+				GetObj('ISL_Cont').scrollLeft -= Space;
+			}
+		
+			function ISL_GoDown() { //下翻 
+				clearInterval(MoveTimeObj);
+				if(MoveLock) return;
+				clearInterval(AutoPlayObj);
+				MoveLock = true;
+				ISL_ScrDown();
+				MoveTimeObj = setInterval('ISL_ScrDown()', Speed);
+			}
+		
+			function ISL_StopDown() { //下翻停止 
+				clearInterval(MoveTimeObj);
+				if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0) {
+					Comp = PageWidth - GetObj('ISL_Cont').scrollLeft % PageWidth + fill;
+					CompScr();
+				} else {
+					MoveLock = false;
+				}
+				AutoPlay();
+			}
+		
+			function ISL_ScrDown() { //下翻动作 
+				if(GetObj('ISL_Cont').scrollLeft >= GetObj('List1').scrollWidth) {
+					GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft - GetObj('List1').scrollWidth;
+				}
+				GetObj('ISL_Cont').scrollLeft += Space;
+			}
+		
+			function CompScr() {
+				var num;
+				if(Comp == 0) {
+					MoveLock = false;
+					return;
+				}
+				if(Comp < 0) { //上翻 
+					if(Comp < -Space) {
+						Comp += Space;
+						num = Space;
+					} else {
+						num = -Comp;
+						Comp = 0;
+					}
+					GetObj('ISL_Cont').scrollLeft -= num;
+					setTimeout('CompScr()', Speed);
+				} else { //下翻 
+					if(Comp > Space) {
+						Comp -= Space;
+						num = Space;
+					} else {
+						num = Comp;
+						Comp = 0;
+					}
+					GetObj('ISL_Cont').scrollLeft += num;
+					setTimeout('CompScr()', Speed);
+				}
+			}
+			//--><!]]>
+		</script>
+	</div>
+	<!--优惠活动-->
+	<div class="yhhd wrap">
+		<div class="title"><p class="fl">优惠活动</p><a href="#" class="fr"><img src="images/icon_13.jpg"/></a></div>
+		<div class="main">
+			<div class="col_4 fl"><a href="#"><img src="images/pic_7.jpg"/></a></div>
+			<div class="col_4 fl">
+				<div class="row_2"><a href="#"><img src="images/pic_8.jpg"/></a></div>
+				<div class="row_2"><a href="#"><img src="images/pic_9.jpg"/></a></div>
+			</div>
+			<div class="col_4 fl">
+				<div class="row_2"><a href="#"><img src="images/pic_10.jpg"/></a></div>
+				<div class="row_2"><a href="#"><img src="images/pic_11.jpg"/></a></div>
+			</div>
+			<div class="col_4 fl"><a href="#"><img src="images/pic_12.jpg"/></a></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<!--资讯&流程-->
+	<div class="zxlc wrap">
+		<div class="zxlc_L fl">
+			<div class="title"><span class="fl">新闻资讯</span><a href="#" class="fr"><img src="images/icon_13.jpg"/></a></div>
+			<ul>
+				<li>
+					<a href="#" class="pic fl"><img src="images/pic_13.jpg"/></a>
+					<p class="tit"><a href="#">德国古堡，亲近大自然的体验</a></p>
+					<p>在欧洲开车，开着开着就出国了，当然，出国之前你还是能看到明确的标识的，告诉你即将进入另一个国家..</p>
+				</li>
+				<li>
+					<a href="#" class="pic fl"><img src="images/pic_14.jpg"/></a>
+					<p class="tit"><a href="#">德国古堡，亲近大自然的体验</a></p>
+					<p>在欧洲开车，开着开着就出国了，当然，出国之前你还是能看到明确的标识的，告诉你即将进入另一个国家..</p>
+				</li>
+				<li>
+					<a href="#" class="pic fl"><img src="images/pic_15.jpg"/></a>
+					<p class="tit"><a href="#">德国古堡，亲近大自然的体验</a></p>
+					<p>在欧洲开车，开着开着就出国了，当然，出国之前你还是能看到明确的标识的，告诉你即将进入另一个国家..</p>
+				</li>
+				<li>
+					<a href="#" class="pic fl"><img src="images/pic_16.jpg"/></a>
+					<p class="tit"><a href="#">德国古堡，亲近大自然的体验</a></p>
+					<p>在欧洲开车，开着开着就出国了，当然，出国之前你还是能看到明确的标识的，告诉你即将进入另一个国家..</p>
+				</li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="zxlc_R fr">
+			<a href="#"><img src="images/icon_14.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_15.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_16.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_17.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_18.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_19.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_20.png"/>预定流程</a>
+			<a href="#"><img src="images/icon_21.png"/>预定流程</a>
+		</div>
+	</div>
+	<!--合作伙伴-->
+	<div class="hzhb wrap">
+		<div class="title"><span>合作伙伴</span></div>
+		<div class="list">
+			<ul>
+				<li><a href="#"><img src="images/pic_17.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_18.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_19.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_20.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_21.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_22.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_23.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_24.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_25.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_26.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_27.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_28.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_29.jpg"/></a></li>
+				<li><a href="#"><img src="images/pic_30.jpg"/></a></li>
+				<div class="clear"></div>
+			</ul>
+		</div>
+	</div>
+	<!--通用底部-->
+	<div class="footer">
+		<div class="ad_bg">
+			<div class="ad wrap">
+				<div class="col_4 fl"><img src="images/icon_22.png"/><p>方便快捷</p><span>随时随地满意租车</span></div>
+				<div class="col_4 fl"><img src="images/icon_23.png"/><p>超多人脉</p><span>高端人脉圈</span></div>
+				<div class="col_4 fl"><img src="images/icon_24.png"/><p>优质服务</p><span>一站式服务满足</span></div>
+				<div class="col_4 fl"><img src="images/icon_25.png"/><p>专业司机</p><span>一流的管家式司机服务</span></div>
+			</div>
+		</div>
+		<div class="con_bg">
+			<div class="wrap">
+				<div class="cont_1">
+					<a href="#" class="logo fl"><img src="images/logo2.png"/></a>
+					<ul>
+						<li>关于米撸</li>
+						<li><a href="#">平台简介</a></li>
+						<li><a href="#">服务流程</a></li>
+						<li><a href="#">用户须知</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+					<ul>
+						<li>招商加盟</li>
+						<li><a href="#">代理商申请</a></li>
+						<li><a href="#">加盟条件说明</a></li>
+						<li><a href="#">合作优势</a></li>
+					</ul>
+					<ul>
+						<li>服务中心</li>
+						<li><a href="#">用户保证计划</a></li>
+						<li><a href="#">免费体验机会</a></li>
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">售后服务</a></li>
+					</ul>
+					<div class="contact fl">
+						<p>全国免费服务热线</p>
+						<p><b>400-8888-999</b></p>
+						<p><span>周一至周日：08:00-22:00</span></p>
+					</div>
+					<img src="images/pic_31.jpg" class="qrcode"/>
+					<div class="clear"></div>
+				</div>
+				<div class="cont_2">
+					<p>Copyright  2016-2020 米撸租车版权所有 All right</p>
+					<p>公司地址：深圳市龙岗区坂田长坑西十巷六号豪亭阁306&emsp;&emsp;咨询电话：0755-66606536&emsp;&emsp;邮箱地址：956012917@qq.com</p>
+					<p>技术支持：深圳市静江网络科技有限公司</p>
+					<p>温馨提示：本站发布的所有信息均为米撸租车提供，未经允许不得转载，最终用户合作以客服沟通结果为准</p>
+					<ul>
+						<li><a href="#"><img src="images/pic_32.png"/></a></li>
+						<li><a href="#"><img src="images/pic_33.png"/></a></li>
+						<li><a href="#"><img src="images/pic_34.png"/></a></li>
+						<li><a href="#"><img src="images/pic_35.png"/></a></li>
+						<li><a href="#"><img src="images/pic_36.png"/></a></li>
+						<li><a href="#"><img src="images/pic_37.png"/></a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</body>
+</html>
